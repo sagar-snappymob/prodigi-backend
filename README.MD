@@ -1,6 +1,6 @@
 # Online Shop
 
-Backend API for an online shop.
+Backend API for Prodigi Backend.
 
 ## Installation
 
@@ -25,4 +25,5 @@ yarn start:dev
 ```
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
