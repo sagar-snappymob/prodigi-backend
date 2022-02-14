@@ -12,7 +12,7 @@ let token;
 describe('Check API users functionality', () => {
   beforeAll(async () => {
     const userList = prisma.user.createMany({
-      data: await Promise.all(users.map(async (u) => ({ ...u, password: await userService.generateHash(u.password) }))),
+      data: await Promise.all(users.map(async (u) => ({ ...u }))),
     });
     const productList = prisma.product.createMany({
       data: products.map((p) => ({ ...p, image: JSON.stringify(p.image) })),
