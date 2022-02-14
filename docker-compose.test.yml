@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  test-db:
+    image: mdillon/postgis:11-alpine
+    labels:
+      - 'osh.project=shop-test-db'
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: tests
+    ports:
+      - '5423:5432'
+    container_name: online_shop_test_database

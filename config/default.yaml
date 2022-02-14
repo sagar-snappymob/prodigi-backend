@@ -1,0 +1,6 @@
+server:
+  port: 8000
+app:
+  hashSalt: 10
+  jwtExp: 3600
+  jwtSecret: secret

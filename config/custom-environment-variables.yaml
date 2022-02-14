@@ -1,0 +1,6 @@
+server:
+  port: PORT
+app:
+  hashSalt: HASH_SALT
+  jwtExp: JWT_EXP
+  jwtSecret: JWT_SECRET

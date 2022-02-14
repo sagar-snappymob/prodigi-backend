@@ -1,0 +1,326 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Online Shop API",
+    "description": "Online Shop API is an online shopping festival."
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "addUser": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Sagar Dave"
+        },
+        "email": {
+          "type": "string",
+          "example": "sagar@snappymob.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "Admin@123"
+        }
+      }
+    },
+    "addWishList": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "sagar@snappymob.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "Admin@123"
+        }
+      }
+    },
+    "addProduct": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "example": "Bags"
+        },
+        "description": {
+          "type": "string",
+          "example": "Laptop Backpack Academy Backpack"
+        },
+        "brand": {
+          "type": "string",
+          "example": "PUMA"
+        },
+        "type": {
+          "type": "string",
+          "example": "Accessories"
+        },
+        "price": {
+          "type": "number",
+          "example": 200
+        },
+        "discount": {
+          "type": "number",
+          "example": 9.99
+        },
+        "image": {
+          "type": "array",
+          "example": [
+            "https://picsum.photos/200",
+            "https://picsum.photos/200",
+            "https://picsum.photos/200"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "productResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "title": {
+          "type": "string",
+          "example": "Bags"
+        },
+        "description": {
+          "type": "string",
+          "example": "Laptop Backpack Academy Backpack"
+        },
+        "brand": {
+          "type": "string",
+          "example": "PUMA"
+        },
+        "type": {
+          "type": "string",
+          "example": "Accessories"
+        },
+        "price": {
+          "type": "number",
+          "example": 200
+        },
+        "discount": {
+          "type": "number",
+          "example": 9.99
+        },
+        "image": {
+          "type": "array",
+          "example": [
+            "https://picsum.photos/200",
+            "https://picsum.photos/200",
+            "https://picsum.photos/200"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "productsResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number",
+                "example": 1
+              },
+              "title": {
+                "type": "string",
+                "example": "Bags"
+              },
+              "description": {
+                "type": "string",
+                "example": "Laptop Backpack Academy Backpack"
+              },
+              "brand": {
+                "type": "string",
+                "example": "PUMA"
+              },
+              "type": {
+                "type": "string",
+                "example": "Accessories"
+              },
+              "price": {
+                "type": "number",
+                "example": 200
+              },
+              "discount": {
+                "type": "number",
+                "example": 9.99
+              },
+              "image": {
+                "type": "array",
+                "example": [
+                  "https://picsum.photos/200",
+                  "https://picsum.photos/200",
+                  "https://picsum.photos/200"
+                ],
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "page": {
+          "type": "number",
+          "example": 1
+        },
+        "totalPage": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "deleteWishlistResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 6
+        },
+        "userId": {
+          "type": "number",
+          "example": 32
+        },
+        "productId": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "userResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "loginResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDQyOTE1NDAsImRhdGEiOnsiZW1haWwiOiJhbWlyQHNuYXBweW1vYi5jb20ifSwiaWF0IjoxNjQ0Mjg3OTQwfQ.qBWLH4kK-NNvAIa78yMFoNkfm9DIgPg8eilE1PU1xGk"
+        }
+      }
+    },
+    "productNotFound": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "example": "DATA_NOT_FOUND_ERROR"
+        },
+        "message": {
+          "type": "string",
+          "example": "product id is not valid."
+        }
+      }
+    },
+    "notFoundError": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "example": "DATA_NOT_FOUND_ERROR"
+        },
+        "message": {
+          "type": "string",
+          "example": "Could not find any data"
+        }
+      }
+    },
+    "serverError": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "example": "SERVER_ERROR"
+        },
+        "message": {
+          "type": "string",
+          "example": "Unknown error"
+        }
+      }
+    },
+    "validationError": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "example": "VALIDATION_ERROR"
+        },
+        "message": {
+          "type": "string",
+          "example": "Data is not valid."
+        }
+      }
+    },
+    "unauthorizedError": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "example": "UNAUTHORIZED_ERROR"
+        },
+        "message": {
+          "type": "string",
+          "example": "Access to this resource was denied."
+        }
+      }
+    },
+    "unprocessableEntity": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "example": "UNPROCESSABLE_ENTITY"
+        },
+        "message": {
+          "type": "string",
+          "example": "Unprocessable Entity."
+        }
+      }
+    }
+  }
+}
